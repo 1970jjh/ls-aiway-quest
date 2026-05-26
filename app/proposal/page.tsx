@@ -11,10 +11,9 @@ import "./proposal.css";
 export default function ProposalPage() {
   const refsRef = useRef<HTMLDivElement>(null);
 
-  // JS 로드 표시 → CSS reveal hide/show 시점 동기화
+  // JS 로드 표시 → CSS reveal hide/show 시점 동기화 + JJ References 동적 모듈 mount
   useEffect(() => {
     document.documentElement.classList.add("js-loaded");
-    // 초기에 viewport 안에 있는 reveal 요소는 즉시 표시
     document.querySelectorAll(".reveal").forEach((el) => {
       const rect = el.getBoundingClientRect();
       if (rect.top < window.innerHeight) {
@@ -30,6 +29,26 @@ export default function ProposalPage() {
       { threshold: 0.08, rootMargin: "0px 0px -50px 0px" }
     );
     document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+
+    // JJ References 동적 모듈 mount (스크립트 로드 후 호출)
+    const tryMount = () => {
+      const w = window as any;
+      if (w.JJReferences && refsRef.current) {
+        // 이미 마운트되어 있으면 skip
+        if (refsRef.current.children.length === 0) {
+          w.JJReferences.mount(refsRef.current, { ctaHref: "#contact" });
+        }
+        return true;
+      }
+      return false;
+    };
+    if (!tryMount()) {
+      const interval = setInterval(() => {
+        if (tryMount()) clearInterval(interval);
+      }, 300);
+      setTimeout(() => clearInterval(interval), 8000);
+    }
+
     return () => observer.disconnect();
   }, []);
 
