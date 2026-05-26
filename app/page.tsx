@@ -63,8 +63,32 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* OPENING VIDEO */}
+      <section className="max-w-6xl mx-auto px-4 -mt-32 relative z-10 mb-12">
+        <div className="hud-panel p-6 md:p-8 backdrop-blur-md">
+          <p className="text-[10px] tracking-[0.3em] text-ls-sky font-bold uppercase">
+            OPENING VIDEO · 오프닝 영상
+          </p>
+          <h2 className="mt-2 text-2xl md:text-3xl font-display font-bold">
+            "AI WORK WAY VOYAGE" · 시작하기 전, 함께 보세요
+          </h2>
+          <div className="mt-5 aspect-video bg-ls-navy border border-ls-line rounded-sm overflow-hidden">
+            <iframe
+              className="w-full h-full"
+              src="https://www.youtube.com/embed/b7sWDnm1glY?rel=0&modestbranding=1&playsinline=1"
+              title="LS AI Work Way Quest · Opening"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            />
+          </div>
+          <p className="mt-3 text-xs text-ls-dim italic text-center">
+            🎬 LS Cable & System · AI Work Way Quest 오프닝 영상 · Gemini TTS + moviepy 제작
+          </p>
+        </div>
+      </section>
+
       {/* PROGRAM OVERVIEW */}
-      <section className="max-w-6xl mx-auto px-4 -mt-32 relative z-10 mb-16">
+      <section className="max-w-6xl mx-auto px-4 mb-16">
         <div className="hud-panel p-6 md:p-8 backdrop-blur-md">
           <p className="text-[10px] tracking-[0.3em] text-ls-sky font-bold uppercase">
             PROGRAM OVERVIEW · 프로그램 소개

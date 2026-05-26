@@ -96,15 +96,13 @@ export default function ProposalPage() {
             </div>
             <div className="prop-hero-media">
               <div className="prop-video">
-                {/* 오프닝 영상 placeholder — 영상 제작 완료 후 실제 YouTube ID로 교체 */}
-                <div className="prop-video-placeholder">
-                  <div className="prop-video-ph-icon">🎬</div>
-                  <div className="prop-video-ph-title">OPENING VIDEO · COMING SOON</div>
-                  <div className="prop-video-ph-sub">
-                    "LS AI Work Way Voyage" · 1분 30초<br />
-                    Remotion으로 제작 후 YouTube 업로드 → 이 자리에 임베드
-                  </div>
-                </div>
+                <iframe
+                  src="https://www.youtube.com/embed/b7sWDnm1glY?rel=0&modestbranding=1"
+                  title="LS Cable & System AI Work Way Quest · 오프닝 영상"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  loading="lazy"
+                />
               </div>
               <p className="prop-video-cap">
                 🎬 오프닝 영상 · "Greater Value Together — 함께 만든 약속, 함께 지킬 시간"
@@ -304,19 +302,19 @@ export default function ProposalPage() {
           <div className="prop-section-inner">
             <div className="prop-eyebrow">REFERENCES</div>
             <h2 className="prop-section-title reveal">
-              JJ Creative <span className="prop-gold">교육 레퍼런스 795+건</span>
+              JJ Creative <span className="prop-gold">교육 레퍼런스 752+건</span>
             </h2>
             <p className="prop-section-desc reveal">
-              2023~2026 누적 강의 후기 · 블로그 · 강사양성 · 콘텐츠 전체 아카이브 (96+ 고객사 / 19 교육주제) · 2026-05 업데이트
+              2023~2026 누적 강의 후기 · 블로그 · 강사양성 · 콘텐츠 아카이브 · 90+ 고객사 / 19 교육주제
             </p>
 
             <div className="ref-stats-grid reveal">
               <div className="ref-stat">
-                <div className="ref-stat-num">795+</div>
+                <div className="ref-stat-num">752+</div>
                 <div className="ref-stat-label">총 레퍼런스 건수</div>
               </div>
               <div className="ref-stat">
-                <div className="ref-stat-num">96+</div>
+                <div className="ref-stat-num">90+</div>
                 <div className="ref-stat-label">교육 진행 고객사</div>
               </div>
               <div className="ref-stat">
@@ -330,22 +328,22 @@ export default function ProposalPage() {
             </div>
 
             <div className="ref-clients-row reveal">
-              <span className="ref-client-chip featured">⭐ 신라HM (PBW 매니지먼트)</span>
+              <span className="ref-client-chip featured">⭐ LIG D&amp;A</span>
+              <span className="ref-client-chip">현대자동차</span>
+              <span className="ref-client-chip">한화시스템</span>
               <span className="ref-client-chip">한국수력원자력</span>
-              <span className="ref-client-chip">한빛원자력본부</span>
-              <span className="ref-client-chip">한화시스템 ICT</span>
-              <span className="ref-client-chip">교보 리얼코</span>
-              <span className="ref-client-chip">현대모비스</span>
-              <span className="ref-client-chip">현대아산</span>
-              <span className="ref-client-chip">SPC GFS</span>
-              <span className="ref-client-chip">LIG D&amp;A</span>
-              <span className="ref-client-chip">웅진</span>
-              <span className="ref-client-chip">코카콜라코리아</span>
-              <span className="ref-client-chip">크래프톤</span>
               <span className="ref-client-chip">효성ITX</span>
-              <span className="ref-client-chip">해성디에스</span>
-              <span className="ref-client-chip">한화첨단소재</span>
-              <span className="ref-client-chip">아워홈</span>
+              <span className="ref-client-chip">한국기술교육대학교</span>
+              <span className="ref-client-chip">한국표준협회</span>
+              <span className="ref-client-chip">동아쏘시오그룹</span>
+              <span className="ref-client-chip">한국에너지공단</span>
+              <span className="ref-client-chip">삼성전자</span>
+              <span className="ref-client-chip">신세계건설</span>
+              <span className="ref-client-chip">SBI저축은행</span>
+              <span className="ref-client-chip">LG전자</span>
+              <span className="ref-client-chip">삼성물산</span>
+              <span className="ref-client-chip">코오롱</span>
+              <span className="ref-client-chip">SPC GFS</span>
             </div>
 
             <div className="ref-topic-grid reveal">
