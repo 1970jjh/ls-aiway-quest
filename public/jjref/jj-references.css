@@ -1,0 +1,521 @@
+/* JJ Creative References Section — Shared styles (vanilla, self-contained) */
+/* 제안서 페이지의 기존 CSS와 충돌하지 않도록 .jjref scope prefix 사용 */
+
+.jjref-root {
+  background: #ffffff;
+  padding: 100px 0;
+  color: #111;
+  font-family: var(--font-kr, 'Noto Sans KR', sans-serif);
+  position: relative;
+  z-index: 1;
+  border-top: 1px solid #e5e5e5;
+}
+.jjref-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.jjref-header {
+  text-align: center;
+  border-bottom: 8px solid #000;
+  padding-bottom: 40px;
+  margin-bottom: 64px;
+}
+.jjref-title {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(3rem, 7vw, 6rem);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: #000;
+  margin: 0 0 14px;
+}
+.jjref-subtitle {
+  color: #999;
+  font-weight: 300;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  font-size: 0.82rem;
+}
+
+/* Stats */
+.jjref-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-bottom: 64px;
+}
+@media (min-width: 768px) { .jjref-stats { grid-template-columns: repeat(4, 1fr); } }
+.jjref-stat {
+  border: 4px solid #000;
+  padding: 22px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: #fff;
+}
+.jjref-stat-icon {
+  background: #000;
+  color: #fff;
+  width: 52px; height: 52px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px;
+  flex-shrink: 0;
+}
+.jjref-stat-label {
+  font-size: 10px;
+  font-weight: 700;
+  color: #999;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin: 0 0 4px;
+}
+.jjref-stat-value {
+  font-family: Georgia, serif;
+  font-size: 2rem;
+  font-weight: 900;
+  color: #000;
+  margin: 0;
+  line-height: 1;
+}
+
+/* Tabs */
+.jjref-tabs {
+  display: flex;
+  border-bottom: 2px solid #000;
+  margin-bottom: 24px;
+  overflow-x: auto;
+}
+.jjref-tab {
+  padding: 14px 22px;
+  font-family: Georgia, serif;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.15em;
+  white-space: nowrap;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #bbb;
+  position: relative;
+  transition: color 0.2s;
+}
+.jjref-tab:hover { color: #555; }
+.jjref-tab.active { color: #000; }
+.jjref-tab.active::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; bottom: -2px;
+  height: 3px;
+  background: #FF0000;
+}
+
+/* Filter Bar */
+.jjref-filters {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+@media (min-width: 768px) { .jjref-filters { flex-direction: row; } }
+.jjref-search {
+  position: relative;
+  flex: 1;
+}
+.jjref-search input {
+  width: 100%;
+  padding: 12px 40px 12px 40px;
+  border: 1px solid #e5e5e5;
+  font-size: 14px;
+  font-family: inherit;
+  outline: none;
+  background: #fff;
+  color: #111;
+}
+.jjref-search input:focus { border-color: #FF0000; }
+.jjref-search-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999;
+  font-size: 14px;
+  pointer-events: none;
+}
+.jjref-search-clear {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #999;
+  cursor: pointer;
+  padding: 4px 8px;
+  font-size: 14px;
+}
+.jjref-search-clear:hover { color: #000; }
+.jjref-select {
+  padding: 12px 14px;
+  border: 1px solid #e5e5e5;
+  font-size: 14px;
+  background: #fff;
+  color: #111;
+  font-family: inherit;
+  outline: none;
+  cursor: pointer;
+  min-width: 120px;
+}
+.jjref-select:focus { border-color: #FF0000; }
+.jjref-count {
+  display: flex;
+  align-items: center;
+  padding: 0 14px;
+  color: #999;
+  font-size: 13px;
+}
+
+/* Row */
+.jjref-list { border-top: 4px solid #000; }
+.jjref-row {
+  border-bottom: 1px solid #eee;
+  padding: 18px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: background-color 0.25s, color 0.25s;
+  text-decoration: none;
+  color: inherit;
+}
+@media (min-width: 768px) {
+  .jjref-row { flex-direction: row; align-items: center; justify-content: space-between; }
+}
+.jjref-row:hover { background: #000; }
+.jjref-row:hover .jjref-row-title { color: #fff; }
+.jjref-row:hover .jjref-row-date { color: #bbb; }
+.jjref-row:hover .jjref-view { color: #FF0000; }
+.jjref-row-left {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+  min-width: 0;
+}
+@media (min-width: 768px) {
+  .jjref-row-left { flex-direction: row; align-items: center; gap: 22px; }
+}
+.jjref-row-date {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 130px;
+  font-size: 12px;
+  color: #999;
+  font-family: 'Courier New', monospace;
+}
+.jjref-row-date::before { content: '🗓'; font-size: 11px; color: #FF0000; }
+.jjref-row-main { flex: 1; min-width: 0; }
+.jjref-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 6px;
+}
+.jjref-tag {
+  display: inline-block;
+  padding: 2px 8px;
+  font-size: 10px;
+  font-weight: 700;
+}
+.jjref-tag-company { background: #000; color: #fff; }
+.jjref-tag-type { background: #f3f4f6; color: #666; }
+.jjref-tag-topic { background: #fef2f2; color: #FF0000; }
+.jjref-row:hover .jjref-tag-company { background: #fff; color: #000; }
+.jjref-row:hover .jjref-tag-type { background: #1f2937; color: #999; }
+.jjref-row:hover .jjref-tag-topic { background: #7f1d1d; color: #fecaca; }
+.jjref-row-title {
+  font-family: Georgia, serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: #000;
+  line-height: 1.4;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.jjref-view {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #999;
+  flex-shrink: 0;
+}
+
+/* Load More */
+.jjref-more {
+  display: block;
+  margin: 32px auto 0;
+  padding: 14px 40px;
+  background: #000;
+  color: #fff;
+  font-family: Georgia, serif;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.jjref-more:hover { background: #FF0000; }
+
+/* Chip buttons (Company/Topic tabs) */
+.jjref-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+.jjref-chip {
+  padding: 4px 10px;
+  font-size: 11px;
+  border: 1px solid #d1d5db;
+  background: #fff;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.15s;
+  color: #333;
+}
+.jjref-chip:hover { border-color: #FF0000; color: #FF0000; }
+.jjref-chip.active {
+  background: #FF0000;
+  color: #fff;
+  border-color: #FF0000;
+}
+
+/* Group heading */
+.jjref-group { margin-bottom: 40px; }
+.jjref-group-title {
+  font-family: Georgia, serif;
+  font-size: 1.4rem;
+  font-weight: 900;
+  border-bottom: 2px solid #000;
+  padding-bottom: 8px;
+  margin: 0 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.jjref-group-title-bar {
+  display: inline-block;
+  width: 4px;
+  height: 22px;
+  background: #FF0000;
+}
+.jjref-group-title .jjref-count-inline {
+  font-family: var(--font-kr, 'Noto Sans KR', sans-serif);
+  font-size: 13px;
+  font-weight: 400;
+  color: #FF0000;
+}
+.jjref-group-title.topic-style { border-bottom: none; }
+
+/* Competency grid */
+.jjref-comp-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+@media (min-width: 768px) { .jjref-comp-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .jjref-comp-grid { grid-template-columns: repeat(3, 1fr); } }
+.jjref-comp {
+  border: 4px solid #000;
+  padding: 22px;
+  background: #fff;
+}
+.jjref-comp-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+.jjref-comp-name {
+  font-family: Georgia, serif;
+  font-size: 1.25rem;
+  font-weight: 900;
+  margin: 0;
+}
+.jjref-comp-count {
+  font-family: Georgia, serif;
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: #FF0000;
+  line-height: 1;
+}
+.jjref-comp-desc {
+  font-size: 13px;
+  color: #6b7280;
+  margin: 0 0 14px;
+  line-height: 1.5;
+}
+.jjref-comp-companies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+.jjref-comp-tag {
+  padding: 2px 8px;
+  background: #f3f4f6;
+  font-size: 10px;
+  color: #4b5563;
+}
+
+/* Timeline */
+.jjref-timeline {
+  position: relative;
+  padding-left: 32px;
+}
+.jjref-timeline::before {
+  content: '';
+  position: absolute;
+  left: 12px; top: 0; bottom: 0;
+  width: 2px;
+  background: #e5e7eb;
+}
+.jjref-timeline-year {
+  margin-bottom: 32px;
+}
+.jjref-timeline-head {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 14px;
+}
+.jjref-timeline-dot {
+  position: absolute;
+  left: -32px;
+  width: 24px; height: 24px;
+  background: #FF0000;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+.jjref-timeline-yr {
+  font-family: Georgia, serif;
+  font-size: 2.3rem;
+  font-weight: 900;
+  color: #FF0000;
+  margin: 0 0 0 8px;
+  line-height: 1;
+}
+.jjref-timeline-count {
+  margin-left: 14px;
+  font-size: 13px;
+  color: #999;
+}
+.jjref-timeline-item {
+  position: relative;
+  display: block;
+  padding: 8px 0 8px 16px;
+  margin-left: 8px;
+  border-left: 2px solid transparent;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s;
+}
+.jjref-timeline-item:hover {
+  border-left-color: #FF0000;
+  background: #fafafa;
+}
+.jjref-timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -25px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px; height: 8px;
+  background: #d1d5db;
+  border-radius: 50%;
+  transition: background 0.2s;
+}
+.jjref-timeline-item:hover::before { background: #FF0000; }
+.jjref-timeline-date { font-size: 11px; color: #999; }
+.jjref-timeline-company {
+  font-size: 11px;
+  font-weight: 700;
+  color: #FF0000;
+  margin-left: 8px;
+}
+.jjref-timeline-title {
+  display: block;
+  font-size: 13px;
+  color: #374151;
+  margin-top: 2px;
+}
+.jjref-timeline-item:hover .jjref-timeline-title { color: #000; }
+.jjref-timeline-more {
+  text-align: center;
+  font-size: 12px;
+  color: #999;
+  padding: 8px;
+}
+
+/* Bottom CTA */
+.jjref-cta {
+  margin-top: 100px;
+  text-align: center;
+}
+.jjref-cta-box {
+  display: inline-block;
+  border: 4px solid #000;
+  padding: 48px;
+  max-width: 640px;
+}
+.jjref-cta-icon {
+  font-size: 44px;
+  color: #FF0000;
+  margin-bottom: 20px;
+}
+.jjref-cta-title {
+  font-family: Georgia, serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 0 0 14px;
+}
+.jjref-cta-desc {
+  color: #6b7280;
+  font-weight: 300;
+  margin: 0 0 28px;
+  line-height: 1.7;
+}
+.jjref-cta-btn {
+  display: inline-block;
+  padding: 14px 40px;
+  background: #000;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-size: 13px;
+  transition: background 0.2s;
+}
+.jjref-cta-btn:hover { background: #FF0000; color: #fff; }
+
+.jjref-empty {
+  text-align: center;
+  padding: 60px 20px;
+  color: #9ca3af;
+  font-size: 14px;
+}
+
+@media (max-width: 640px) {
+  .jjref-root { padding: 60px 0; }
+  .jjref-row { padding: 14px; }
+  .jjref-row-title { white-space: normal; }
+  .jjref-tab { padding: 12px 14px; font-size: 12px; }
+  .jjref-cta-box { padding: 32px 24px; }
+}

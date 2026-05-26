@@ -55,6 +55,9 @@ export default function HomePage() {
               <Link href="/quests/hub" className="btn-ghost text-lg">
                 📋 Quest 목록 보기
               </Link>
+              <Link href="/proposal" className="btn-ghost text-lg">
+                📄 제안서 보기
+              </Link>
             </div>
           </div>
         </div>
