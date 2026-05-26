@@ -131,12 +131,15 @@ def build_video():
 
         if sc["narr"]:
             try:
+                # 한글 폰트 지정 (맑은 고딕)
+                korean_font = "C:/Windows/Fonts/malgun.ttf"
                 txt = TextClip(
-                    text=sc["narr"], font_size=44, color="white",
+                    text=sc["narr"], font_size=52, color="white",
+                    font=korean_font,
                     method="caption", size=(int(W*0.85), None),
                     text_align="center",
-                    stroke_color="black", stroke_width=2,
-                ).with_duration(sc["dur"]).with_position(("center", int(H*0.78)))
+                    stroke_color="black", stroke_width=3,
+                ).with_duration(sc["dur"]).with_position(("center", int(H*0.76)))
                 clip = CompositeVideoClip([clip, txt])
             except Exception as e:
                 print(f"  ⚠ 자막 실패 (계속 진행): {e}")

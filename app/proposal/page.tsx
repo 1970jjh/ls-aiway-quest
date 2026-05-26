@@ -97,7 +97,7 @@ export default function ProposalPage() {
             <div className="prop-hero-media">
               <div className="prop-video">
                 <iframe
-                  src="https://www.youtube.com/embed/b7sWDnm1glY?rel=0&modestbranding=1"
+                  src="https://www.youtube.com/embed/TXxOND2bTXg?rel=0&modestbranding=1"
                   title="LS Cable & System AI Work Way Quest · 오프닝 영상"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowFullScreen
@@ -297,80 +297,63 @@ export default function ProposalPage() {
           </div>
         </section>
 
-        {/* JJ REFERENCES INTRO */}
-        <section id="references" className="prop-section prop-section-alt">
+        {/* JJ REFERENCES INTRO (정적 인트로 + 동적 모듈 컨테이너) — 신라HM 페이지 패턴 그대로 */}
+        <section className="prop-section prop-section-alt" style={{ paddingBottom: 40 }}>
           <div className="prop-section-inner">
             <div className="prop-eyebrow">REFERENCES</div>
             <h2 className="prop-section-title reveal">
-              JJ Creative <span className="prop-gold">교육 레퍼런스 752+건</span>
+              JJ Creative <span className="prop-gold">교육 레퍼런스 795건</span>
             </h2>
             <p className="prop-section-desc reveal">
-              2023~2026 누적 강의 후기 · 블로그 · 강사양성 · 콘텐츠 아카이브 · 90+ 고객사 / 19 교육주제
+              2023~2026 누적 강의 후기 · 블로그 · 강사양성 · 콘텐츠 전체 아카이브 (96+ 고객사 / 19 교육주제) · 2026-05-22 업데이트
             </p>
 
-            <div className="ref-stats-grid reveal">
-              <div className="ref-stat">
-                <div className="ref-stat-num">752+</div>
-                <div className="ref-stat-label">총 레퍼런스 건수</div>
-              </div>
-              <div className="ref-stat">
-                <div className="ref-stat-num">90+</div>
-                <div className="ref-stat-label">교육 진행 고객사</div>
-              </div>
-              <div className="ref-stat">
-                <div className="ref-stat-num">19</div>
-                <div className="ref-stat-label">교육 주제 영역</div>
-              </div>
-              <div className="ref-stat">
-                <div className="ref-stat-num">4Y+</div>
-                <div className="ref-stat-label">누적 운영 기간</div>
-              </div>
-            </div>
-
-            <div className="ref-clients-row reveal">
-              <span className="ref-client-chip featured">⭐ LIG D&amp;A</span>
-              <span className="ref-client-chip">현대자동차</span>
-              <span className="ref-client-chip">한화시스템</span>
-              <span className="ref-client-chip">한국수력원자력</span>
-              <span className="ref-client-chip">효성ITX</span>
-              <span className="ref-client-chip">한국기술교육대학교</span>
-              <span className="ref-client-chip">한국표준협회</span>
-              <span className="ref-client-chip">동아쏘시오그룹</span>
-              <span className="ref-client-chip">한국에너지공단</span>
-              <span className="ref-client-chip">삼성전자</span>
-              <span className="ref-client-chip">신세계건설</span>
-              <span className="ref-client-chip">SBI저축은행</span>
-              <span className="ref-client-chip">LG전자</span>
-              <span className="ref-client-chip">삼성물산</span>
-              <span className="ref-client-chip">코오롱</span>
-              <span className="ref-client-chip">SPC GFS</span>
-            </div>
-
-            <div className="ref-topic-grid reveal">
-              {REFERENCE_TOPICS.map((t) => (
-                <div key={t.title} className="ref-topic-card">
-                  <div className="ref-topic-icon">{t.icon}</div>
-                  <div className="ref-topic-title">{t.title}</div>
-                  <div className="ref-topic-clients">{t.clients}</div>
+            <div className="ref-intro">
+              {/* Stats Grid */}
+              <div className="ref-stats-grid">
+                <div className="ref-stat reveal">
+                  <div className="ref-stat-num">795</div>
+                  <div className="ref-stat-label">총 레퍼런스 건수</div>
                 </div>
-              ))}
-            </div>
+                <div className="ref-stat reveal">
+                  <div className="ref-stat-num">96</div>
+                  <div className="ref-stat-label">교육 진행 고객사</div>
+                </div>
+                <div className="ref-stat reveal">
+                  <div className="ref-stat-num">19</div>
+                  <div className="ref-stat-label">교육 주제 영역</div>
+                </div>
+                <div className="ref-stat reveal">
+                  <div className="ref-stat-num">4Y+</div>
+                  <div className="ref-stat-label">누적 운영 기간</div>
+                </div>
+              </div>
 
-            <div className="reveal" style={{ textAlign: "center", marginTop: 40 }}>
-              <a
-                href="https://service-3-ai-851830077252.us-west1.run.app/"
-                target="_blank"
-                rel="noopener"
-                className="prop-btn prop-btn-primary"
-              >
-                🎓 JJ AI 교육 홈페이지에서 더 자세히 보기
-              </a>
+              {/* 대표 고객사 chips */}
+              <div className="ref-clients-row reveal">
+                <span className="ref-client-chip featured">⭐ 신라HM (PBW 매니지먼트)</span>
+                <span className="ref-client-chip">한국수력원자력</span>
+                <span className="ref-client-chip">한빛원자력본부</span>
+                <span className="ref-client-chip">한화시스템 ICT</span>
+                <span className="ref-client-chip">교보 리얼코</span>
+                <span className="ref-client-chip">현대모비스</span>
+                <span className="ref-client-chip">현대아산</span>
+                <span className="ref-client-chip">SPC GFS</span>
+                <span className="ref-client-chip">LIG D&amp;A</span>
+                <span className="ref-client-chip">웅진</span>
+                <span className="ref-client-chip">코카콜라코리아</span>
+                <span className="ref-client-chip">크래프톤</span>
+                <span className="ref-client-chip">효성ITX</span>
+                <span className="ref-client-chip">해성디에스</span>
+                <span className="ref-client-chip">한화첨단소재</span>
+                <span className="ref-client-chip">브이프</span>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* JJ REFERENCES MODULE (동적 — JS 모듈 로드 시 자동 렌더) */}
-        <div ref={refsRef} data-jjref="auto" data-cta="#contact" />
+        {/* JJ REFERENCES MODULE (795건 풀 검색 + 필터 + Load More) */}
+        <section ref={refsRef} id="references" data-jjref="auto" data-cta="#contact" />
 
         {/* FOOTER */}
         <footer className="prop-footer">
@@ -402,15 +385,6 @@ export default function ProposalPage() {
 // ============================================================
 // 8 Quest 요약 데이터
 // ============================================================
-const REFERENCE_TOPICS = [
-  { icon: "🤖", title: "AI · ChatGPT 비즈니스", clients: "신라HM · 한수원 · 효성ITX · 아워홈 외" },
-  { icon: "👑", title: "리더십 · 임원 코칭", clients: "LIG D&A · 웅진 · 한빛원자력본부 외" },
-  { icon: "💎", title: "핵심가치 · 조직문화", clients: "크래프톤 · 코카콜라코리아 · 한화 외" },
-  { icon: "🚀", title: "신입·승격 온보딩", clients: "현대모비스 · SPC GFS · 해성디에스 외" },
-  { icon: "🎯", title: "마케팅 · 영업 · CX", clients: "교보 리얼코 · 현대아산 · 한화첨단소재 외" },
-  { icon: "🎮", title: "게이미피케이션 학습", clients: "크래프톤 WAY · 신라HM 워크숍 · LS Quest" },
-];
-
 const QUEST_LIST = [
   { id: "Q1", cat: "MINDSET", title: "FLOW SHIFTER", way: "단순 반복을 넘어, 몰입으로", desc: "1주 업무를 4단계로 분해 → AI 위임으로 확보한 몰입 시간 산출" },
   { id: "Q2", cat: "MINDSET", title: "VALUE BLENDER", way: "경험을 더해, 가치를 완성한다", desc: "Gemini 80점 초안 + LS 현장 경험 = 대체불가 100점 결과물" },

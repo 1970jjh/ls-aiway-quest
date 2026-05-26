@@ -75,7 +75,7 @@ export default function HomePage() {
           <div className="mt-5 aspect-video bg-ls-navy border border-ls-line rounded-sm overflow-hidden">
             <iframe
               className="w-full h-full"
-              src="https://www.youtube.com/embed/b7sWDnm1glY?rel=0&modestbranding=1&playsinline=1"
+              src="https://www.youtube.com/embed/TXxOND2bTXg?rel=0&modestbranding=1&playsinline=1"
               title="LS AI Work Way Quest · Opening"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
